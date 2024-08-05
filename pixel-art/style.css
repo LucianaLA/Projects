@@ -1,0 +1,56 @@
+body {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s ease; /* Optional: smooth background color transition */
+    background-color:transparent;
+}
+
+menu {
+    display:block;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.215);
+    width: 100%;
+}
+
+button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 150%;
+}
+
+button:hover{
+    transition: background-color 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.215);
+}
+
+#color-picker-container {
+    margin-bottom: 20px;
+}
+
+#color-picker {
+    font-size: large;
+    font-weight: bold;
+}
+
+#canvas {
+    display: grid;
+    grid-template-columns: repeat(16, 20px);
+    grid-template-rows: repeat(16, 20px);
+    gap: 1px;
+}
+
+.pixel {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
