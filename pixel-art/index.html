@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make your own pixel art</title>
+    <title>Make Your Own Pixel Art</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- make top menu -->
-    <!-- <div>
-         <menu>
-            <button>Edit</button>
+    <!-- Top Menu -->
+    <div id="top-menu">
+        <menu>
+            <div class="dropdown">
+                <button id="edit-btn">Edit</button>
+                <div id="edit-menu" class="hidden edit-menu">
+                    <select id="grid-size">
+                        <option value="8">Small grid (8x8)</option>
+                        <option value="16">Medium grid (16x16)</option>
+                        <option value="32">Large grid (32x32)</option>
+                    </select>
+                </div>
+            </div>
             <button>Save</button>
             <button>Undo</button>
             <button>Redo</button>
             <button>Share</button>
-         </menu>
-    </div> -->
-    <h1>Make your own pixel art</h1>
-    <div id="color-picker-container">
-        <label for="color-picker">Choose Color: </label>
-        <input type="color" id="color-picker" value="#000000">
+        </menu>
     </div>
-    <div id="canvas"></div>
+    <div class="content">
+        <h1>Make Your Own Pixel Art</h1>
+        <div id="color-picker-container">
+            <label for="color-picker">Choose Color: </label>
+            <input type="color" id="color-picker" value="#000000">
+        </div>
+        <div id="canvas"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

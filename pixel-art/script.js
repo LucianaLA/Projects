@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('canvas');
     const colorPicker = document.getElementById('color-picker');
+    const editBtn = document.getElementById('edit-btn');
+    const editMenu = document.getElementById('edit-menu');
+    const gridSizeSelector = document.getElementById('grid-size');
 
-    // random pastel color for background
+    // Function to generate a random pastel color
     function getRandomPastelColor() {
         const r = Math.floor((Math.random() * 127) + 127);
         const g = Math.floor((Math.random() * 127) + 127);
@@ -10,18 +13,37 @@ document.addEventListener('DOMContentLoaded', () => {
         return `rgb(${r}, ${g}, ${b})`;
     }
 
-    // set colour to background
+    // Set random pastel background color for the page
     document.body.style.backgroundColor = getRandomPastelColor();
 
-    // 16x16 grid
-    for (let i = 0; i < 16 * 16; i++) {
-        const pixel = document.createElement('div');
-        pixel.classList.add('pixel');
-        canvas.appendChild(pixel);
+    // Toggle edit menu visibility
+    editBtn.addEventListener('click', () => {
+        editMenu.classList.toggle('hidden');
+    });
 
-        // Add event listener to change pixel color on click
-        pixel.addEventListener('click', () => {
-            pixel.style.backgroundColor = colorPicker.value;
-        });
+    // Function to create the grid
+    function createGrid(size) {
+        canvas.innerHTML = '';
+        canvas.style.gridTemplateColumns = `repeat(${size}, 20px)`;
+        canvas.style.gridTemplateRows = `repeat(${size}, 20px)`;
+        
+        for (let i = 0; i < size * size; i++) {
+            const pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+            canvas.appendChild(pixel);
+
+            // Add event listener to change pixel color on click
+            pixel.addEventListener('click', () => {
+                pixel.style.backgroundColor = colorPicker.value;
+            });
+        }
     }
+
+    // Initialize grid with default size
+    createGrid(16);
+
+    // Change grid size based on selection
+    gridSizeSelector.addEventListener('change', (e) => {
+        createGrid(parseInt(e.target.value, 10));
+    });
 });
