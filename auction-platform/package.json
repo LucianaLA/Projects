@@ -1,0 +1,24 @@
+{
+  "name": "auction-platform",
+  "version": "1.0.0",
+  "description": "- Audio + video live streaming\r - Client login and profile\r - live bidding\r - catalogue\r # Backend: Node.js (Express + TypeScript)\r - live clerking\r - auctioneer screen\r - client details management\r - auction management: catalogue, invoicing\r - basic frontend management\r # Databases\r PostgreSQL?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.23",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
